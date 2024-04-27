@@ -8,7 +8,7 @@ public class Question {
     @Column(name="question_id")
     private int questionId;
     private String question;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     //@JoinColumn(name = "a_id") //The answer id is called join column
     private Answer answer; // This is unidirectional, that is only question table will have the answer ID. However if we also set the question column in answer, then that will be multidirectional
 
